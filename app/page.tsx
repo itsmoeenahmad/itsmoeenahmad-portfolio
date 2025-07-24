@@ -121,7 +121,7 @@ const experiences = [
       {
         position: "Software Engineer",
         type: "Full-time",
-        duration: "June 2024 - Present ",
+        duration: "July 2024 - Present ",
         description:
           "Responsible for developing mobile applications from scratch and integrating custom RESTful APIs. Also build generative AI solutions, managing both APIs integration, DevOps tasks and collaborate with the development teams.",
         skills: ["Flutter", "Generative AI", "DevOps", "+15 skills"],
