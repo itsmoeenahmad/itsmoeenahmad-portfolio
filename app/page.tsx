@@ -136,7 +136,7 @@ const experiences = [
       {
         position: "Flutter Mobile App Developer",
         type: "Full-time",
-        duration: "July 2024 - January 2025 ",
+        duration: "July 2024 - June 2025 ",
         description:
           "Developed AI-related mobile applications using Flutter, integrating Firebase for backend services and real-time data management.",
         skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
