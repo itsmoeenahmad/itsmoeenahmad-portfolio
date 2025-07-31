@@ -522,24 +522,21 @@ export default function Page() {
       {/* About Section */}
       <section id="about" className="min-h-screen flex items-center justify-center relative z-10 py-20 px-4 sm:px-6">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-8">About Me</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 sm:mb-16">About Me</h2>
       
           <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed space-y-8">
           <p>
-  I'm a Generative AI Engineer and Mobile App Developer with over two years of experience building practical solutions that combine usability with intelligence. I started out in mobile development using Flutter, working on projects like logistics apps, online consultation apps and many more platforms. Over time, my focus shifted toward integrating AI into the products I build, aiming to create smarter, more adaptive systems.
+      I am a <strong className="text-white font-semibold">Full Stack Engineer</strong> who builds <strong className="text-white font-semibold">Mobile Apps</strong>, <strong className="text-white font-semibold">Rest APIs</strong>, and <strong className="text-white font-semibold">Generative AI Solutions</strong>. I started by making apps using <strong className="text-white font-semibold">Flutter</strong> for areas like logistics, healthcare, and online services. My focus has always been on creating things that are useful and easy to use.
 </p>
 
 <p>
-My work now spans a variety of AI-driven tools and services, focusing on making applications smarter and more responsive to user needs. On the backend, I work with RAG pipelines, Chatbots, AI Agents, and scalable systems using DevOps practices, LLMOps, and cloud platforms like AWS, GCP and another serverless platforms. I enjoy designing solutions that are both technically solid and user-focused.
+Now I work on projects that include smart features powered by <strong className="text-white font-semibold">AI</strong>. This includes tools like <strong className="text-white font-semibold">chatbots</strong>, <strong className="text-white font-semibold">AI Agents</strong>, and Systems that use <strong className="text-white font-semibold">large language models</strong>. I also build backends that run on cloud platforms such as <strong className="text-white font-semibold">AWS</strong>, <strong className="text-white font-semibold">GCP</strong> and <strong className="text-white font-semibold">Render/Railway</strong> using modern tools to keep things fast and reliable.
 </p>
 
 <p>
-  Some of my recent projects include a Medical AI agent, a Flutter AI tool, and several automated workflows to enhance system performance. I take pride in building things that are not just functional but genuinely useful.
+Beyond building, I'm also an active <strong className="text-white font-semibold">tech speaker</strong> and contributor in the developer community. Always learning, sharing, and staying connected to the fast moving world of <strong className="text-white font-semibold">AI</strong> and <strong className="text-white font-semibold">App Development</strong>.
 </p>
 
-<p>
-  Outside of development, I'm an active tech speaker and community contributor. I enjoy sharing ideas, learning from others, and staying involved in the fast-moving world of AI and App Development.
-</p>
 
           </div>
         </div>
