@@ -19,6 +19,7 @@ import {
   Code2,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image" // Import Image component
 import { useState, useEffect } from "react"
 import AnimatedBackground from "./components/animated-background"
 import ContactForm from "./components/contact-form"
@@ -123,21 +124,6 @@ const projects = [
 ]
 
 const experiences = [
-  {
-    company: "Cloud Business Co.",
-    location: "Dammam, Saudi Arabia • Remote",
-    logo: "/images/cloud-bus-co.png",
-    roles: [
-      {
-        position: "Software Engineer",
-        type: "Full-time",
-        duration: "July 2024 - Present ",
-        description:
-          "Responsible for developing mobile applications from scratch and integrating custom RESTful APIs. Also build generative AI solutions, managing both APIs integration, DevOps tasks and collaborate with the development teams.",
-        skills: ["Flutter", "Generative AI", "DevOps", "+15 skills"],
-      },
-    ],
-  },
   {
     company: "Giant Tech Solutions LLC",
     location: "Wyoming, US • Remote",
@@ -421,7 +407,7 @@ export default function Page() {
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight">
               Moeen Ahmad
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300">Full Stack Engineer (AI + Flutter)</p>
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300">Full Stack Engineer (Flutter + AI)</p>
           </div>
 
           <div className="flex items-center justify-center space-x-6">
@@ -474,9 +460,11 @@ export default function Page() {
 
             <p>
               Beyond building, I'm also an active <strong className="text-white font-semibold">tech speaker</strong> and
-              contributor in the developer community. Always learning, sharing, and staying connected to the fast moving
-              world of <strong className="text-white font-semibold">AI</strong> and{" "}
-              <strong className="text-white font-semibold">App Development</strong>.
+              contributor in the tech communities.
+            </p>
+            <p>
+            <strong className="text-white font-semibold">Still Learning.</strong>{" "}
+              <strong className="text-white font-semibold">Still Building.</strong>
             </p>
           </div>
         </div>
@@ -495,16 +483,26 @@ export default function Page() {
                 key={index}
                 className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/10"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-1 sm:mb-0">
-                    {exp.company}
-                  </h3>
-                  <span className="text-xs sm:text-sm text-gray-400 bg-white/10 px-2 sm:px-3 py-1 rounded-full w-fit">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 lg:mb-6">
+                  <div className="flex items-center gap-3 mb-1 sm:mb-0">
+                    <Image
+                      src={exp.logo || "/placeholder.svg"}
+                      alt={`${exp.company} logo`}
+                      width={40}
+                      height={40}
+                      className="rounded-full" // Changed from rounded-lg to rounded-full to make logos circular
+                    />
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">{exp.company}</h3>
+                  </div>
+                  <span className="text-xs sm:text-sm text-gray-300 bg-white/10 px-2 sm:px-3 py-1 rounded-full w-fit">
                     {exp.location}
                   </span>
                 </div>
                 {exp.roles.map((role, roleIndex) => (
-                  <div key={roleIndex} className={`${roleIndex > 0 ? "border-t border-white/10 pt-4 sm:pt-6" : ""}`}>
+                  <div
+                    key={roleIndex}
+                    className={`${roleIndex > 0 ? "border-t border-white/10 pt-6 sm:pt-8 mt-6 sm:mt-8" : ""}`}
+                  >
                     <h4 className="text-base sm:text-lg font-medium text-white mb-1">{role.position}</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-1">{role.type}</p>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">{role.duration}</p>
