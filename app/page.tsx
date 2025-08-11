@@ -85,15 +85,6 @@ const projects = [
     image: "/mamamate-ai-interface.png", // Added placeholder image
   },
   {
-    title: "Chat With PDFs AI",
-    description:
-      "AI-Powered chat system using LangChain, FAISS, and Gemini — upload multiple PDFs, embed content into vector DB, and interact through intelligent Q&A.",
-    tags: ["Generative AI", "Langchain Framewor", "RAG System"],
-    githubLink: "https://github.com/itsmoeenahmad/Chat-With-PDFs-AI",
-    type: "github",
-    image: "/chat-with-pdfs-ai-interface.png", // Added placeholder image
-  },
-  {
     title: "Face Shape Detector AI",
     description:
       "A Python-based facial analysis tool that uses computer vision and facial landmark detection to determine face shapes (Oval, Oblong, Heart, Square, Diamond) from images. Built with OpenCV and dlib face shape analysis.",
@@ -103,12 +94,12 @@ const projects = [
     image: "/face-shape-detector-ai.png", // Added placeholder image
   },
   {
-    title: "Face Advisor AI",
+    title: "Gesture Volume Control",
     description:
-      "A smart AI assistant that gives personalized beauty and style advice based on your face shape. Get suggestions for glasses, hairstyle, makeup, and more using just your face shape analysis.",
-    tags: ["Python", "Prompt Engineering", "Rest API"],
-    restApiLink: "https://face-advisor-ai.vercel.app/",
-    type: "restapi",
+      "A hand gesture volume controller using Python, OpenCV, and MediaPipe. It uses your webcam to track your hand in real-time and changes the macOS volume when you move your index finger up or down compared to your thumb. This tool works only on macOS using AppleScript to control the volume.",
+    tags: ["Python", "MediaPipe", "OpenCV"],
+    githubLink: "https://github.com/itsmoeenahmad/Gesture-Volume-Control",
+    type: "github",
     image: "/face-advisor-ai-screenshot.png", // Added placeholder image
   },
   {
@@ -121,6 +112,25 @@ const projects = [
     type: "streamlit", // Changed type from github to streamlit
     image: "/ai-resume-checker-screenshot.png",
   },
+  {
+    title: "Supply Chain Management System",
+    description:
+      "A blockchain-based supply chain management system built on Ethereum using Solidity, enabling transparent product tracking from producer to retailer with secure, tamper-proof records.",
+    tags: ["Blockchain", "Solidity", "Smart Contracts"],
+    githubLink: "https://github.com/itsmoeenahmad/Supply-Chain-Management-System",
+    type: "github",
+    image: "/face-advisor-ai-screenshot.png", // Added placeholder image
+  },
+  {
+    title: "Chat With PDFs AI",
+    description:
+      "AI-Powered chat system using LangChain, FAISS, and Gemini — upload multiple PDFs, embed content into vector DB, and interact through intelligent Q&A.",
+    tags: ["Generative AI", "Langchain Framewor", "RAG System"],
+    githubLink: "https://github.com/itsmoeenahmad/Chat-With-PDFs-AI",
+    type: "github",
+    image: "/chat-with-pdfs-ai-interface.png", // Added placeholder image
+  },
+  
 ]
 
 const experiences = [
