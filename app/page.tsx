@@ -17,7 +17,6 @@ import {
   Menu,
   X,
   Code2,
-  ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -25,7 +24,7 @@ import AnimatedBackground from "./components/animated-background"
 import ContactForm from "./components/contact-form"
 import PrivacyPolicyModal from "./components/privacy-policy-modal"
 import TermsOfUseModal from "./components/terms-of-use-modal"
-import Image from "next/image"
+import ProjectCard from "./components/project-card" // Import ProjectCard
 
 const projects = [
   {
@@ -36,6 +35,7 @@ const projects = [
     playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.user&pli=1",
     appStoreLink: "https://apps.apple.com/us/app/apaale/id6502597789",
     type: "store",
+    image: "/apaale-user-app.png", // Added placeholder image
   },
   {
     title: "Apaale Driver App",
@@ -45,6 +45,7 @@ const projects = [
     playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.driver&pli=1",
     appStoreLink: "https://apps.apple.com/us/app/logistic-supplier/id6502517359",
     type: "store",
+    image: "/apaale-driver-app-screenshot.png", // Added placeholder image
   },
   {
     title: "M3KOM User App",
@@ -53,6 +54,7 @@ const projects = [
     tags: ["Cross Platform Developemnt", "UI Design", "Error Solving"],
     appStoreLink: "https://apps.apple.com/pk/app/m3kom-user-app/id6460860855",
     type: "store",
+    image: "/m3kom-user-app.png", // Added placeholder image
   },
   {
     title: "M3KOM Consultant App",
@@ -61,6 +63,7 @@ const projects = [
     tags: ["Cross Platform Developemnt", "API Integration", "Error Solving"],
     appStoreLink: "https://apps.apple.com/pk/app/m3kom/id6460889820",
     type: "store",
+    image: "/m3kom-consultant-app.png", // Added placeholder image
   },
   {
     title: "Ava Voice Assistant",
@@ -69,6 +72,7 @@ const projects = [
     tags: ["UI Design", "Agile", "Firebase"],
     githubLink: "https://github.com/itsmoeenahmad/Ava-Voice-Assistant",
     type: "github",
+    image: "/ava-voice-assistant.png", // Added placeholder image
   },
   {
     title: "MamaMate AI",
@@ -77,6 +81,7 @@ const projects = [
     tags: ["Mobile App Development", "Agentic AI", "Rest API"],
     githubLink: "https://github.com/itsmoeenahmad/MamaMate-AI",
     type: "github",
+    image: "/mamamate-ai-interface.png", // Added placeholder image
   },
   {
     title: "Chat With PDFs AI",
@@ -85,6 +90,7 @@ const projects = [
     tags: ["Generative AI", "Langchain Framewor", "RAG System"],
     githubLink: "https://github.com/itsmoeenahmad/Chat-With-PDFs-AI",
     type: "github",
+    image: "/chat-with-pdfs-ai-interface.png", // Added placeholder image
   },
   {
     title: "Face Shape Detector AI",
@@ -93,6 +99,7 @@ const projects = [
     tags: ["Python", "Machine Learning", "Rest API"],
     restApiLink: "https://legislative-cordey-moeenpersonal-dd30912f.koyeb.app/docs",
     type: "restapi",
+    image: "/face-shape-detector-ai.png", // Added placeholder image
   },
   {
     title: "Face Advisor AI",
@@ -101,6 +108,7 @@ const projects = [
     tags: ["Python", "Prompt Engineering", "Rest API"],
     restApiLink: "https://face-advisor-ai.vercel.app/",
     type: "restapi",
+    image: "/face-advisor-ai-screenshot.png", // Added placeholder image
   },
   {
     title: "Smart AI Resume Checker AI",
@@ -108,7 +116,9 @@ const projects = [
       "Streamlit app that checks resumes against job descriptions using Gemini Pro. Provides a match score, missing keywords, and improved profile summary.",
     tags: ["Python", "PyPDF", "Streamlit"],
     githubLink: "https://github.com/itsmoeenahmad/Smart-ATS-Resume-Checker-AI",
-    type: "github",
+    streamlitLink: "https://smart-ats-resume-checker-ai.streamlit.app/", // Added streamlit link
+    type: "streamlit", // Changed type from github to streamlit
+    image: "/ai-resume-checker-screenshot.png",
   },
 ]
 
@@ -142,14 +152,13 @@ const experiences = [
         skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
       },
       {
-       position: "Gen AI Engineer",
+        position: "Gen AI Engineer",
         type: "Full-time",
         duration: "January 2024 - June 2025",
         description:
           "Worked as a Generative AI Engineer, building and integrating AI systems into mobile apps. Key tasks included creating RAG pipelines, AI agents, FastAPI backends, and automations with n8n, all integrated using Flutter.",
         skills: ["LLMs", "AI Agents", "Vector DBs", "R&D", "+15 skills"],
-      
-      }
+      },
     ],
   },
   {
@@ -220,21 +229,15 @@ const techStack = {
     "Hugging Face",
     "LLM OPS",
   ],
-  "BackEnd": [
-    "Python",
-    "FastAPI Framework",
-    "Rest APIs",
-    "Firebase",
-    "MongoDB"
-  ],
+  BackEnd: ["Python", "FastAPI Framework", "Rest APIs", "Firebase", "MongoDB"],
   "Cloud & DevOps": [
-  "Docker", 
-  "Git", 
-  "Github Actions",
-  "Google Cloud Platform",
-  "Amazon Web Services",
-  "Railway", 
-  "Koyeb",
+    "Docker",
+    "Git",
+    "Github Actions",
+    "Google Cloud Platform",
+    "Amazon Web Services",
+    "Railway",
+    "Koyeb",
   ],
 }
 
@@ -244,9 +247,7 @@ export default function Page() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false)
-
-  const projectsPerPage = 2
-  const totalPages = Math.ceil(projects.length / projectsPerPage)
+  const [projectsPerPage, setProjectsPerPage] = useState(3)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -282,17 +283,38 @@ export default function Page() {
   }
 
   const nextProjects = () => {
-    setCurrentProjectIndex((prev) => (prev + 1) % totalPages)
+    setCurrentProjectIndex((prev) => Math.min(prev + 1, projects.length - projectsPerPage))
   }
 
   const prevProjects = () => {
-    setCurrentProjectIndex((prev) => (prev - 1 + totalPages) % totalPages)
+    setCurrentProjectIndex((prev) => Math.max(prev - 1, 0))
   }
 
   const getCurrentProjects = () => {
-    const startIndex = currentProjectIndex * projectsPerPage
-    return projects.slice(startIndex, startIndex + projectsPerPage)
+    return projects.slice(currentProjectIndex, currentProjectIndex + projectsPerPage)
   }
+
+  const getProjectsPerPage = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 768) return 1 // Mobile: 1 project
+      if (window.innerWidth < 1024) return 2 // Tablet: 2 projects
+      return 3 // Desktop: 3 projects
+    }
+    return 3
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setProjectsPerPage(getProjectsPerPage())
+    }
+
+    handleResize() // Set initial value
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  // Max index for the first project in the visible window
+  const maxProjectIndex = Math.max(0, projects.length - projectsPerPage)
 
   return (
     <div className="min-h-screen bg-[#0a0e27] text-white relative overflow-x-hidden">
@@ -304,60 +326,25 @@ export default function Page() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <button
-                onClick={() => scrollToSection("home")}
-                className={`flex items-center space-x-2 text-sm transition-colors ${
-                  currentSection === "home" ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                <Home className="h-4 w-4" />
-                <span>Home</span>
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className={`flex items-center space-x-2 text-sm transition-colors ${
-                  currentSection === "about" ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                <User className="h-4 w-4" />
-                <span>About</span>
-              </button>
-              <button
-                onClick={() => scrollToSection("experience")}
-                className={`flex items-center space-x-2 text-sm transition-colors ${
-                  currentSection === "experience" ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                <Briefcase className="h-4 w-4" />
-                <span>Experience</span>
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className={`flex items-center space-x-2 text-sm transition-colors ${
-                  currentSection === "projects" ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                <FolderOpen className="h-4 w-4" />
-                <span>Projects</span>
-              </button>
-              <button
-                onClick={() => scrollToSection("techstack")}
-                className={`flex items-center space-x-2 text-sm transition-colors ${
-                  currentSection === "techstack" ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                <Code2 className="h-4 w-4" />
-                <span>Tech Stack</span>
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className={`flex items-center space-x-2 text-sm transition-colors ${
-                  currentSection === "contact" ? "text-white" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                <MessageCircle className="h-4 w-4" />
-                <span>Contact</span>
-              </button>
+              {[
+                { id: "home", icon: Home, label: "Home" },
+                { id: "about", icon: User, label: "About" },
+                { id: "experience", icon: Briefcase, label: "Experience" },
+                { id: "projects", icon: FolderOpen, label: "Projects" },
+                { id: "techstack", icon: Code2, label: "Tech Stack" },
+                { id: "contact", icon: MessageCircle, label: "Contact" },
+              ].map(({ id, icon: Icon, label }) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className={`flex items-center space-x-2 text-sm transition-colors ${
+                    currentSection === id ? "text-white" : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{label}</span>
+                </button>
+              ))}
             </div>
 
             <div className="flex items-center space-x-4">
@@ -400,72 +387,27 @@ export default function Page() {
           <div className="md:hidden absolute top-full left-0 right-0 bg-[#0a0e27]/95 backdrop-blur-sm border-b border-white/10">
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col space-y-4">
-                <button
-                  onClick={() => scrollToSection("home")}
-                  className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
-                    currentSection === "home"
-                      ? "text-white bg-white/10"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  <Home className="h-5 w-5" />
-                  <span>Home</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
-                    currentSection === "about"
-                      ? "text-white bg-white/10"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  <User className="h-5 w-5" />
-                  <span>About</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection("experience")}
-                  className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
-                    currentSection === "experience"
-                      ? "text-white bg-white/10"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  <Briefcase className="h-5 w-5" />
-                  <span>Experience</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection("projects")}
-                  className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
-                    currentSection === "projects"
-                      ? "text-white bg-white/10"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  <FolderOpen className="h-5 w-5" />
-                  <span>Projects</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection("techstack")}
-                  className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
-                    currentSection === "techstack"
-                      ? "text-white bg-white/10"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  <Code2 className="h-5 w-5" />
-                  <span>Tech Stack</span>
-                </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
-                    currentSection === "contact"
-                      ? "text-white bg-white/10"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  <span>Contact</span>
-                </button>
+                {[
+                  { id: "home", icon: Home, label: "Home" },
+                  { id: "about", icon: User, label: "About" },
+                  { id: "experience", icon: Briefcase, label: "Experience" },
+                  { id: "projects", icon: FolderOpen, label: "Projects" },
+                  { id: "techstack", icon: Code2, label: "Tech Stack" },
+                  { id: "contact", icon: MessageCircle, label: "Contact" },
+                ].map(({ id, icon: Icon, label }) => (
+                  <button
+                    key={id}
+                    onClick={() => scrollToSection(id)}
+                    className={`flex items-center space-x-3 text-left py-3 px-4 rounded-lg transition-colors ${
+                      currentSection === id
+                        ? "text-white bg-white/10"
+                        : "text-gray-400 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span>{label}</span>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -482,39 +424,23 @@ export default function Page() {
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-300">Full Stack Engineer (AI + Flutter)</p>
           </div>
 
-          <div className="flex items-center justify-center space-x-4 sm:space-x-6">
-            <Link
-              href="https://github.com/itsmoeenahmad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 sm:p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors"
-            >
-              <Github className="h-4 w-4 sm:h-5 sm:w-5" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/itsmoeenahmad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 sm:p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors"
-            >
-              <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-            </Link>
-            <Link
-              href="https://www.instagram.com/itsmoeenahmad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 sm:p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors"
-            >
-              <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
-            </Link>
-            <Link
-              href="mailto:itsmoeenahmad@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 sm:p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors"
-            >
-              <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
-            </Link>
+          <div className="flex items-center justify-center space-x-6">
+            {[
+              { href: "https://github.com/itsmoeenahmad", icon: Github },
+              { href: "https://www.linkedin.com/in/itsmoeenahmad", icon: Linkedin },
+              { href: "https://www.instagram.com/itsmoeenahmad", icon: Instagram },
+              { href: "mailto:itsmoeenahmad@gmail.com", icon: Mail },
+            ].map(({ href, icon: Icon }, index) => (
+              <Link
+                key={index}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors"
+              >
+                <Icon className="h-5 w-5" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -522,22 +448,36 @@ export default function Page() {
       {/* About Section */}
       <section id="about" className="min-h-screen flex items-center justify-center relative z-10 py-20 px-4 sm:px-6">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 sm:mb-16">About Me</h2>
-      
+          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">About Me</h2>
+
           <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed space-y-8">
-          <p>
-      I am a <strong className="text-white font-semibold">Full Stack Engineer</strong> who builds <strong className="text-white font-semibold">Mobile Apps</strong>, <strong className="text-white font-semibold">Rest APIs</strong>, and <strong className="text-white font-semibold">Generative AI Solutions</strong>. I started by making apps using <strong className="text-white font-semibold">Flutter</strong> for areas like logistics, healthcare, and online services. My focus has always been on creating things that are useful and easy to use.
-</p>
+            <p>
+              I am a <strong className="text-white font-semibold">Full Stack Engineer</strong> who builds{" "}
+              <strong className="text-white font-semibold">Mobile Apps</strong>,{" "}
+              <strong className="text-white font-semibold">Rest APIs</strong>, and{" "}
+              <strong className="text-white font-semibold">Generative AI Solutions</strong>. I started by making apps
+              using <strong className="text-white font-semibold">Flutter</strong> for areas like logistics, healthcare,
+              and online services. My focus has always been on creating things that are useful and easy to use.
+            </p>
 
-<p>
-Now I work on projects that include smart features powered by <strong className="text-white font-semibold">AI</strong>. This includes tools like <strong className="text-white font-semibold">chatbots</strong>, <strong className="text-white font-semibold">AI Agents</strong>, and Systems that use <strong className="text-white font-semibold">large language models</strong>. I also build backends that run on cloud platforms such as <strong className="text-white font-semibold">AWS</strong>, <strong className="text-white font-semibold">GCP</strong> and <strong className="text-white font-semibold">Render/Railway</strong> using modern tools to keep things fast and reliable.
-</p>
+            <p>
+              Now I work on projects that include smart features powered by{" "}
+              <strong className="text-white font-semibold">AI</strong>. This includes tools like{" "}
+              <strong className="text-white font-semibold">chatbots</strong>,{" "}
+              <strong className="text-white font-semibold">AI Agents</strong>, and Systems that use{" "}
+              <strong className="text-white font-semibold">large language models</strong>. I also build backends that
+              run on cloud platforms such as <strong className="text-white font-semibold">AWS</strong>,{" "}
+              <strong className="text-white font-semibold">GCP</strong> and{" "}
+              <strong className="text-white font-semibold">Render/Railway</strong> using modern tools to keep things
+              fast and reliable.
+            </p>
 
-<p>
-Beyond building, I'm also an active <strong className="text-white font-semibold">tech speaker</strong> and contributor in the developer community. Always learning, sharing, and staying connected to the fast moving world of <strong className="text-white font-semibold">AI</strong> and <strong className="text-white font-semibold">App Development</strong>.
-</p>
-
-
+            <p>
+              Beyond building, I'm also an active <strong className="text-white font-semibold">tech speaker</strong> and
+              contributor in the developer community. Always learning, sharing, and staying connected to the fast moving
+              world of <strong className="text-white font-semibold">AI</strong> and{" "}
+              <strong className="text-white font-semibold">App Development</strong>.
+            </p>
           </div>
         </div>
       </section>
@@ -545,50 +485,42 @@ Beyond building, I'm also an active <strong className="text-white font-semibold"
       {/* Experience Section */}
       <section
         id="experience"
-        className="min-h-screen flex items-center justify-center relative z-10 py-20 px-4 sm:px-6"
+        className="min-h-screen flex items-center justify-center relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
       >
         <div className="container mx-auto">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 sm:mb-24 text-center">
-            Experience
-          </h2>
-          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">Experience</h2>
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 lg:space-y-12">
             {experiences.map((exp, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white/10">
-                <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img
-                      src={exp.logo || "/placeholder.svg"}
-                      alt={exp.company}
-                      className="w-full h-full object-cover"
-                      style={{ maxWidth: "100%", maxHeight: "100%" }}
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg sm:text-xl font-semibold text-white">{exp.company}</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">{exp.location}</p>
-                  </div>
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/10"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-1 sm:mb-0">
+                    {exp.company}
+                  </h3>
+                  <span className="text-xs sm:text-sm text-gray-400 bg-white/10 px-2 sm:px-3 py-1 rounded-full w-fit">
+                    {exp.location}
+                  </span>
                 </div>
-
-                <div className="space-y-4 sm:space-y-6">
-                  {exp.roles.map((role, roleIndex) => (
-                    <div key={roleIndex} className={`${roleIndex > 0 ? "border-t border-white/10 pt-4 sm:pt-6" : ""}`}>
-                      <h4 className="text-base sm:text-lg font-medium text-white mb-1">{role.position}</h4>
-                      <p className="text-gray-400 text-xs sm:text-sm mb-1">{role.type}</p>
-                      <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">{role.duration}</p>
-                      <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">{role.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {role.skills.map((skill, skillIndex) => (
-                          <span
-                            key={skillIndex}
-                            className="px-2 sm:px-3 py-1 bg-white/10 rounded-full text-xs sm:text-sm text-gray-300"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+                {exp.roles.map((role, roleIndex) => (
+                  <div key={roleIndex} className={`${roleIndex > 0 ? "border-t border-white/10 pt-4 sm:pt-6" : ""}`}>
+                    <h4 className="text-base sm:text-lg font-medium text-white mb-1">{role.position}</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-1">{role.type}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">{role.duration}</p>
+                    <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">{role.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {role.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-2 sm:px-3 py-1 bg-white/10 rounded-full text-xs sm:text-sm text-gray-300"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -596,147 +528,29 @@ Beyond building, I'm also an active <strong className="text-white font-semibold"
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="min-h-screen flex items-center justify-center relative z-10 py-20 px-4 sm:px-6">
+      <section
+        id="projects"
+        className="min-h-screen flex items-center justify-center relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
+      >
         <div className="container mx-auto">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 sm:mb-24 text-center">
-            Projects
-          </h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">Projects</h2>
           <div className="max-w-6xl mx-auto">
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
               {getCurrentProjects().map((project, index) => (
-                <div
+                <ProjectCard
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-white/10 transition-all duration-300"
-                >
-                  {/* Project Header */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 text-base sm:text-lg leading-relaxed">{project.description}</p>
-                  </div>
-
-                  {/* Skills/Tags */}
-                  <div className="mb-8">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-3 sm:px-4 py-1 sm:py-2 bg-white/10 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-white/20 transition-colors"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Store Links */}
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">Available On</h4>
-                    {project.type === "github" && project.githubLink ? (
-                      <Link
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all duration-200 group/link"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                            <Github className="h-4 w-4 text-gray-400" />
-                          </div>
-                          <div>
-                            <span className="text-white font-medium">View Source Code</span>
-                            <p className="text-xs text-gray-400">Available on GitHub</p>
-                          </div>
-                        </div>
-                        <ArrowRight className="h-5 w-5 text-gray-400 group-hover/link:translate-x-1 group-hover/link:text-white transition-all" />
-                      </Link>
-                    ) : project.type === "restapi" && project.restApiLink ? (
-                      <Link
-                        href={project.restApiLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all duration-200 group/link"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                            <Code2 className="h-4 w-4 text-gray-400" />
-                          </div>
-                          <div>
-                            <span className="text-white font-medium">View its REST API</span>
-                            <p className="text-xs text-gray-400">Swagger UI</p>
-                          </div>
-                        </div>
-                        <ArrowRight className="h-5 w-5 text-gray-400 group-hover/link:translate-x-1 group-hover/link:text-white transition-all" />
-                      </Link>
-                    ) : project.type === "secret" ? (
-                      <div className="flex items-center justify-center w-full p-4 bg-white/5 border border-white/20 rounded-lg">
-                        <span className="text-white font-medium">
-                          The source code is confidential and not publicly shared, as it is part of a company project.
-                          No live link to the app is being provided.
-                        </span>
-                      </div>
-                    ) : (
-                      <>
-                        {/* Play Store Link */}
-                        {project.playStoreLink && (
-                          <Link
-                            href={project.playStoreLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all duration-200 group/link"
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                                <Image
-                                  src="/icons/playstore.png"
-                                  alt="Play Store"
-                                  width={18}
-                                  height={18}
-                                  className="rounded-sm"
-                                />
-                              </div>
-                              <div>
-                                <span className="text-white font-medium">Google Play Store</span>
-                                <p className="text-xs text-gray-400">Download for Android</p>
-                              </div>
-                            </div>
-                            <ArrowRight className="h-5 w-5 text-gray-400 group-hover/link:translate-x-1 group-hover/link:text-white transition-all" />
-                          </Link>
-                        )}
-
-                        {/* App Store Link */}
-                        {project.appStoreLink && (
-                          <Link
-                            href={project.appStoreLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all duration-200 group/link"
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                                <Image
-                                  src="/icons/appstore.png"
-                                  alt="App Store"
-                                  width={18}
-                                  height={18}
-                                  className="rounded-sm"
-                                />
-                              </div>
-                              <div>
-                                <span className="text-white font-medium">Apple App Store</span>
-                                <p className="text-xs text-gray-400">Download for iOS</p>
-                              </div>
-                            </div>
-                            <ArrowRight className="h-5 w-5 text-gray-400 group-hover/link:translate-x-1 group-hover/link:text-white transition-all" />
-                          </Link>
-                        )}
-                      </>
-                    )}
-                  </div>
-                </div>
+                  title={project.title}
+                  description={project.description}
+                  image={project.image} // Pass the image prop
+                  tags={project.tags}
+                  type={project.type}
+                  githubLink={project.githubLink}
+                  restApiLink={project.restApiLink}
+                  playStoreLink={project.playStoreLink}
+                  appStoreLink={project.appStoreLink}
+                  streamlitLink={project.streamlitLink} // Added streamlitLink prop
+                />
               ))}
             </div>
 
@@ -745,14 +559,14 @@ Beyond building, I'm also an active <strong className="text-white font-semibold"
               <button
                 onClick={prevProjects}
                 disabled={currentProjectIndex === 0}
-                className="p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
 
               {/* Progress Bar */}
               <div className="flex items-center gap-2">
-                {Array.from({ length: totalPages }).map((_, index) => (
+                {Array.from({ length: Math.max(1, projects.length - projectsPerPage + 1) }).map((_, index) => (
                   <div
                     key={index}
                     className={`h-1 rounded-full transition-all duration-300 ${
@@ -764,8 +578,8 @@ Beyond building, I'm also an active <strong className="text-white font-semibold"
 
               <button
                 onClick={nextProjects}
-                disabled={currentProjectIndex === totalPages - 1}
-                className="p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={currentProjectIndex >= maxProjectIndex}
+                className="p-3 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -777,21 +591,24 @@ Beyond building, I'm also an active <strong className="text-white font-semibold"
       {/* Tech Stack Section */}
       <section
         id="techstack"
-        className="min-h-screen flex items-center justify-center relative z-10 py-20 px-4 sm:px-6"
+        className="min-h-screen flex items-center justify-center relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
       >
         <div className="container mx-auto">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 sm:mb-24 text-center">
-            Tech Stack
-          </h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">Tech Stack</h2>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {Object.entries(techStack).map(([category, skills]) => (
-              <div key={category} className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white/10">
-                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">{category}</h3>
+              <div
+                key={category}
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/10"
+              >
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-3 sm:mb-4 lg:mb-6">
+                  {category}
+                </h3>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-3 sm:px-4 py-1 sm:py-2 bg-white/10 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-white/20 transition-colors"
+                      className="px-2 sm:px-3 py-1 sm:py-1.5 bg-white/10 text-gray-300 rounded-full text-xs sm:text-sm font-medium"
                     >
                       {skill}
                     </span>
@@ -804,12 +621,15 @@ Beyond building, I'm also an active <strong className="text-white font-semibold"
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center justify-center relative z-10 py-20 px-4 sm:px-6">
+      <section
+        id="contact"
+        className="min-h-screen flex items-center justify-center relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
+      >
         <div className="container mx-auto">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 sm:mb-24 text-center">
-            Get in Touch
-          </h2>
-          <ContactForm />
+          <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">Contact Me</h2>
+          <div className="max-w-2xl mx-auto">
+            <ContactForm />
+          </div>
         </div>
       </section>
 
