@@ -130,7 +130,6 @@ const projects = [
     type: "github",
     image: "/chat-with-pdfs-ai-interface.png", // Added placeholder image
   },
-  
 ]
 
 const experiences = [
@@ -473,7 +472,7 @@ export default function Page() {
               contributor in the tech communities.
             </p>
             <p>
-            <strong className="text-white font-semibold">Still Learning.</strong>{" "}
+              <strong className="text-white font-semibold">Still Learning.</strong>{" "}
               <strong className="text-white font-semibold">Still Building.</strong>
             </p>
           </div>
@@ -562,8 +561,32 @@ export default function Page() {
               ))}
             </div>
 
-            {/* Navigation Controls */}
-            <div className="flex items-center justify-center gap-6">
+            {/* Mobile Navigation (visible only on mobile) */}
+            <div className="md:hidden space-y-4">
+              {/* Navigation Buttons - Centered and stacked */}
+              <div className="flex items-center justify-center gap-4">
+                <button
+                  onClick={prevProjects}
+                  disabled={currentProjectIndex === 0}
+                  className="flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-white/5 backdrop-blur-sm"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                  <span className="text-base font-medium">Previous</span>
+                </button>
+
+                <button
+                  onClick={nextProjects}
+                  disabled={currentProjectIndex >= maxProjectIndex}
+                  className="flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-white/5 backdrop-blur-sm"
+                >
+                  <span className="text-base font-medium">Next</span>
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Desktop/Tablet Navigation (hidden on mobile) */}
+            <div className="hidden md:flex items-center justify-center gap-6">
               <button
                 onClick={prevProjects}
                 disabled={currentProjectIndex === 0}
@@ -575,10 +598,11 @@ export default function Page() {
               {/* Progress Bar */}
               <div className="flex items-center gap-2">
                 {Array.from({ length: Math.max(1, projects.length - projectsPerPage + 1) }).map((_, index) => (
-                  <div
+                  <button
                     key={index}
+                    onClick={() => setCurrentProjectIndex(index)}
                     className={`h-1 rounded-full transition-all duration-300 ${
-                      index === currentProjectIndex ? "w-8 bg-white" : "w-4 bg-white/30"
+                      index === currentProjectIndex ? "w-8 bg-white" : "w-4 bg-white/30 hover:bg-white/50"
                     }`}
                   />
                 ))}
