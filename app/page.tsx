@@ -197,12 +197,13 @@ const experiences = [
 ]
 
 const techStack = {
-  "Mobile App Development": [
+  "Flutter": [
     "Dart Programming",
-    "Flutter Framework",
-    "Cross Platform Development",
+    "Android Apps Development",
+    "iOS Apps Development",
     "UI Design",
     "Responsiveness",
+    "State Management",
     "APIs Integration",
     "Backend as a Service",
     "CI/CD",
@@ -224,7 +225,7 @@ const techStack = {
     "Hugging Face",
     "LLM OPS",
   ],
-  BackEnd: ["Python", "FastAPI Framework", "Rest APIs", "Firebase", "MongoDB"],
+  "Backend": ["Python", "FastAPI Framework", "Rest APIs", "Firebase", "MongoDB"],
   "Cloud & DevOps": [
     "Docker",
     "Git",
