@@ -67,6 +67,15 @@ const projects = [
     image: "/m3kom-consultant-app.png", // Added placeholder image
   },
   {
+    title: "Flutter AI",
+    description:
+      "Agentic AI Flutter Development Assistant that helps developers with package suggestions, code issues, and debugging support. It answers Flutter-related questions quickly and accurately in a conversational manner.",
+    tags: ["Agentic AI", "RAG", "DevOps"],
+    websiteLink: "http://flutterai.app/",
+    type: "website",
+    image: "/ava-voice-assistant.png", // Added placeholder image
+  },
+  {
     title: "Ava Voice Assistant",
     description:
       "A voice assistant powered by Gemini, developed in Flutter using speech-to-text and text-to-speech technologies for seamless voice interaction.",
@@ -197,7 +206,7 @@ const experiences = [
 ]
 
 const techStack = {
-  "Flutter": [
+  Flutter: [
     "Dart Programming",
     "Android Apps Development",
     "iOS Apps Development",
@@ -225,7 +234,7 @@ const techStack = {
     "Hugging Face",
     "LLM OPS",
   ],
-  "Backend": ["Python", "FastAPI Framework", "Rest APIs", "Firebase", "MongoDB"],
+  Backend: ["Python", "FastAPI Framework", "Rest APIs", "Firebase", "MongoDB"],
   "Cloud & DevOps": [
     "Docker",
     "Git",
@@ -558,6 +567,7 @@ export default function Page() {
                   playStoreLink={project.playStoreLink}
                   appStoreLink={project.appStoreLink}
                   streamlitLink={project.streamlitLink} // Added streamlitLink prop
+                  websiteLink={project.websiteLink} // Added websiteLink prop
                 />
               ))}
             </div>
