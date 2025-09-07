@@ -153,7 +153,7 @@ const experiences = [
         duration: "June 2024 - Present ",
         description:
           "Created and shared informative content about Flutter across social media platforms, collaborated with both local and international clients, engaged in public speaking through seminars, workshops, and webinars.",
-        skills: ["Creativity", "Public Speaking","Agile", "+15 skills"],
+        skills: ["Creativity", "Public Speaking","AppDev", "+15 skills"],
       },
     ],
   },
@@ -173,7 +173,7 @@ const experiences = [
       {
         position: "Generative AI Engineer",
         type: "Full-time",
-        duration: "January 2024 - June 2025",
+        duration: "Jan 2025 - June 2025",
         description:
           "Worked as a Generative AI Engineer, building and integrating AI systems into mobile apps. Key tasks included creating RAG pipelines, AI agents, FastAPI backends, and automations with n8n, all integrated using Flutter.",
         skills: ["LLMs", "AI Agents", "Vector DBs", "R&D", "+15 skills"],
