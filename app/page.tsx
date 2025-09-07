@@ -142,13 +142,28 @@ const projects = [
 ]
 
 const experiences = [
+{
+    company: "Flutter Craft",
+    location: "Peshawar, Pakistan • Hybrid",
+    logo: "/images/flutter-craft-logo.png",
+    roles: [
+      {
+        position: "Content Creator",
+        type: "Full-time",
+        duration: "June 2024 - Present ",
+        description:
+          "Created and shared informative content about Flutter across social media platforms, collaborated with both local and international clients, engaged in public speaking through seminars, workshops, and webinars.",
+        skills: ["Creativity", "Public Speaking","Agile", "+15 skills"],
+      },
+    ],
+  },
   {
     company: "Giant Tech Solutions LLC",
     location: "Wyoming, US • Remote",
     logo: "/images/giant-tech-logo.png",
     roles: [
       {
-        position: "Flutter Mobile App Developer",
+        position: "Junior Mobile App Developer",
         type: "Full-time",
         duration: "July 2024 - June 2025 ",
         description:
@@ -156,7 +171,7 @@ const experiences = [
         skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
       },
       {
-        position: "Gen AI Engineer",
+        position: "Generative AI Engineer",
         type: "Full-time",
         duration: "January 2024 - June 2025",
         description:
@@ -166,40 +181,17 @@ const experiences = [
     ],
   },
   {
-    company: "Flutter Craft",
-    location: "Peshawar, Pakistan • Hybrid",
-    logo: "/images/flutter-craft-logo.png",
-    roles: [
-      {
-        position: "Creator and Tech Speaker",
-        type: "Full-time",
-        duration: "June 2024 - Present ",
-        description:
-          "Created and shared informative content about Flutter across social media platforms, collaborated with both local and international clients, engaged in public speaking through seminars, workshops, and webinars.",
-        skills: ["Creativity", "Public Speaking", "Agile", "+15 skills"],
-      },
-    ],
-  },
-  {
     company: "Iplexsoft",
     location: "Peshawar, Pakistan • Onsite",
     logo: "/images/iplexsoft-logo.png",
     roles: [
       {
-        position: "Junior Flutter App Developer",
+        position: "Junior Mobile App Developer",
         type: "Full-time",
-        duration: "March 2024 - May 2024",
+        duration: "Dec 2023 - May 2024",
         description:
           "Worked with App Store deployment and updation processes, Tap payment gateway, Google Maps APIs, and integrated REST APIs to enhance app functionality and user experience.",
-        skills: ["App Store", "APIs", "Postman", "Payment Gateway", "+10 skills"],
-      },
-      {
-        position: "Flutter App Development Intern",
-        type: "Full-time",
-        duration: "December 2023 - February 2024",
-        description:
-          "Collaborated with a team of five professional app developers to design and implement responsive user interfaces for cross-platform mobile applications on Android and iOS.",
-        skills: ["Flutter", "Dart", "OOPs", "UI Design", "Responsive Design", "+5 skills"],
+        skills: ["Flutter", "APIs", "Responsiveness", "Payment Gateway", "AppStore", "+10 skills"],
       },
     ],
   },
@@ -215,6 +207,7 @@ const techStack = {
     "State Management",
     "APIs Integration",
     "Backend as a Service",
+    "Localization",
     "CI/CD",
     "Deployment",
   ],
