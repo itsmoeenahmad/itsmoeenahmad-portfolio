@@ -142,18 +142,33 @@ const projects = [
 ]
 
 const experiences = [
-{
+  {
+    company: "Cloud Business Co.",
+    location: "Dammam, Saudi Arabia • Hybrid",
+    logo: "/images/cloud-business-co-logo.png", // Updated logo path to use the new Cloud Business Co. logo
+    roles: [
+      {
+        position: "Senior Mobile App Developer",
+        type: "Full-time",
+        duration: "July 2025 - Present ",
+        description:
+          "Working on real-world mobile apps, developing cross-platform solutions, UI, localization, backend integrations, and overseeing all aspects of app development, including project planning, execution, and mentoring junior devs.",
+        skills: ["Flutter", "Team Building", "Localization", "+15 skills"],
+      },
+    ],
+  },
+  {
     company: "Flutter Craft",
     location: "Peshawar, Pakistan • Hybrid",
     logo: "/images/flutter-craft-logo.png",
     roles: [
       {
         position: "Content Creator",
-        type: "Full-time",
+        type: "Part-time",
         duration: "June 2024 - Present ",
         description:
           "Created and shared informative content about Flutter across social media platforms, collaborated with both local and international clients, engaged in public speaking through seminars, workshops, and webinars.",
-        skills: ["Creativity", "Public Speaking","AppDev", "+15 skills"],
+        skills: ["Creativity", "Public Speaking", "AppDev", "+15 skills"],
       },
     ],
   },
@@ -493,7 +508,7 @@ export default function Page() {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/10"
+                className="bg-slate-800/40 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/20"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 lg:mb-6">
                   <div className="flex items-center gap-3 mb-1 sm:mb-0">
@@ -502,28 +517,28 @@ export default function Page() {
                       alt={`${exp.company} logo`}
                       width={40}
                       height={40}
-                      className="rounded-full" // Changed from rounded-lg to rounded-full to make logos circular
+                      className="rounded-full"
                     />
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">{exp.company}</h3>
                   </div>
-                  <span className="text-xs sm:text-sm text-gray-300 bg-white/10 px-2 sm:px-3 py-1 rounded-full w-fit">
+                  <span className="text-xs sm:text-sm text-gray-100 bg-slate-700/60 px-2 sm:px-3 py-1 rounded-full w-fit">
                     {exp.location}
                   </span>
                 </div>
                 {exp.roles.map((role, roleIndex) => (
                   <div
                     key={roleIndex}
-                    className={`${roleIndex > 0 ? "border-t border-white/10 pt-6 sm:pt-8 mt-6 sm:mt-8" : ""}`}
+                    className={`${roleIndex > 0 ? "border-t border-white/20 pt-6 sm:pt-8 mt-6 sm:mt-8" : ""}`}
                   >
                     <h4 className="text-base sm:text-lg font-medium text-white mb-1">{role.position}</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-1">{role.type}</p>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">{role.duration}</p>
-                    <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">{role.description}</p>
+                    <p className="text-gray-300 text-xs sm:text-sm mb-1">{role.type}</p>
+                    <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">{role.duration}</p>
+                    <p className="text-gray-100 text-sm sm:text-base mb-3 sm:mb-4">{role.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {role.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="px-2 sm:px-3 py-1 bg-white/10 rounded-full text-xs sm:text-sm text-gray-300"
+                          className="px-2 sm:px-3 py-1 bg-slate-700/60 rounded-full text-xs sm:text-sm text-gray-100"
                         >
                           {skill}
                         </span>
