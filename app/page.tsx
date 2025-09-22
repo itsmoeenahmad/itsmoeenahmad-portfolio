@@ -216,15 +216,15 @@ const techStack = {
   Flutter: [
     "Dart Programming",
     "Android Apps Development",
-    "iOS Apps Development",
+    "IOS Apps Development",
     "UI Design",
     "Responsiveness",
     "State Management",
     "APIs Integration",
     "Backend as a Service",
     "Localization",
+    "Deployment(Play/App Store)",
     "CI/CD",
-    "Deployment",
   ],
   "Generative AI": [
     "Python",
@@ -242,7 +242,7 @@ const techStack = {
     "Hugging Face",
     "LLM OPS",
   ],
-  Backend: ["Python", "FastAPI Framework", "Rest APIs", "Firebase", "MongoDB"],
+  Backend: ["Python", "FastAPI Framework", "Rest APIs", "Postman", "Firebase", "MongoDB"],
   "Cloud & DevOps": [
     "Docker",
     "Git",
