@@ -8,12 +8,13 @@ interface ProjectCardProps {
   description: string
   image?: string // Keep for compatibility but won't use
   tags: string[]
-  type: "github" | "restapi" | "secret" | "store" | "streamlit" // Added streamlit type
+  type: "github" | "restapi" | "secret" | "store" | "streamlit" | "website" // Added website type
   githubLink?: string
   restApiLink?: string
   playStoreLink?: string
   appStoreLink?: string
-  streamlitLink?: string // Added streamlit link prop
+  streamlitLink?: string
+  websiteLink?: string // Added websiteLink prop
 }
 
 export default function ProjectCard({
@@ -25,7 +26,8 @@ export default function ProjectCard({
   restApiLink,
   playStoreLink,
   appStoreLink,
-  streamlitLink, // Added streamlit link parameter
+  streamlitLink,
+  websiteLink, // Added websiteLink parameter
 }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden h-[500px] sm:h-[550px] lg:h-[600px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 sm:p-6 lg:p-8 flex flex-col">
@@ -193,6 +195,32 @@ export default function ProjectCard({
                   </Link>
                 )}
               </>
+            ) : null}
+
+            {type === "website" && websiteLink ? (
+              <Link
+                href={websiteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between w-full p-2.5 sm:p-3 bg-gray-800/50 border border-gray-700/50 rounded-lg hover:bg-gray-800/70 hover:border-gray-600/50 transition-all duration-200 group touch-manipulation"
+              >
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-700/50 rounded-xl flex items-center justify-center p-1">
+                    <Image
+                      src="/icons/website-icon.png"
+                      alt="Website"
+                      width={16}
+                      height={16}
+                      className="w-4 h-4 sm:w-5 sm:h-5 object-contain brightness-0 invert"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-white font-semibold text-sm sm:text-base">View Online</span>
+                    <p className="text-gray-400 text-xs">Open Website</p>
+                  </div>
+                </div>
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-gray-400 group-hover:translate-x-1 group-hover:text-white transition-all" />
+              </Link>
             ) : null}
           </div>
         </div>

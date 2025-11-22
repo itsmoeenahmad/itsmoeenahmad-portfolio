@@ -32,7 +32,7 @@ const projects = [
     title: "Apaale User App",
     description:
       "An application that connects users who want to transport goods or documents with available drivers, enabling seamless city-to-city or point-to-point delivery.",
-    tags: ["Mobile App Development", "API Integration", "Google Maps Integraion"],
+    tags: ["Mobile App Development", "API Integration", "Google Maps Integration"],
     playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.user&pli=1",
     appStoreLink: "https://apps.apple.com/us/app/apaale/id6502597789",
     type: "store",
@@ -42,7 +42,7 @@ const projects = [
     title: "Apaale Driver App",
     description:
       "An application for drivers to receive delivery requests from users looking to transport goods or documents across different locations with ease.",
-    tags: ["Mobile App Development", "API Integration", "Google Maps Integraion"],
+    tags: ["Mobile App Development", "API Integration", "Google Maps Integration"],
     playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.driver&pli=1",
     appStoreLink: "https://apps.apple.com/us/app/logistic-supplier/id6502517359",
     type: "store",
@@ -52,7 +52,7 @@ const projects = [
     title: "M3KOM User App",
     description:
       "An application that connects users with consultants (experts like teachers, doctors, etc.) for guidance and support in various fields.",
-    tags: ["Cross Platform Developemnt", "UI Design", "Error Solving"],
+    tags: ["Cross Platform Development", "UI Design", "Error Solving"],
     appStoreLink: "https://apps.apple.com/pk/app/m3kom-user-app/id6460860855",
     type: "store",
     image: "/m3kom-user-app.png", // Added placeholder image
@@ -61,7 +61,7 @@ const projects = [
     title: "M3KOM Consultant App",
     description:
       "An application for consultants—experts such as teachers, doctors, and more—to connect with users seeking guidance and professional advice.",
-    tags: ["Cross Platform Developemnt", "API Integration", "Error Solving"],
+    tags: ["Cross Platform Development", "API Integration", "Error Solving"],
     appStoreLink: "https://apps.apple.com/pk/app/m3kom/id6460889820",
     type: "store",
     image: "/m3kom-consultant-app.png", // Added placeholder image
@@ -134,7 +134,7 @@ const projects = [
     title: "Chat With PDFs AI",
     description:
       "AI-Powered chat system using LangChain, FAISS, and Gemini — upload multiple PDFs, embed content into vector DB, and interact through intelligent Q&A.",
-    tags: ["Generative AI", "Langchain Framewor", "RAG System"],
+    tags: ["Generative AI", "Langchain Framework", "RAG System"],
     githubLink: "https://github.com/itsmoeenahmad/Chat-With-PDFs-AI",
     type: "github",
     image: "/chat-with-pdfs-ai-interface.png", // Added placeholder image
@@ -145,12 +145,12 @@ const experiences = [
   {
     company: "Cloud Business Co.",
     location: "Dammam, Saudi Arabia • Hybrid",
-    logo: "/images/cloud-business-co-logo.png", // Updated logo path to use the new Cloud Business Co. logo
+    logo: "/images/cloud-business-co-logo.png",
     roles: [
       {
         position: "Senior Mobile App Developer",
         type: "Full-time",
-        duration: "July 2025 - Present ",
+        duration: "July 2025 - Present",
         description:
           "Working on real-world mobile apps, developing cross-platform solutions, UI, localization, backend integrations, and overseeing all aspects of app development, including project planning, execution, and mentoring junior devs.",
         skills: ["Flutter", "Team Building", "Localization", "+15 skills"],
@@ -216,37 +216,39 @@ const techStack = {
   Flutter: [
     "Dart Programming",
     "Android Apps Development",
-    "IOS Apps Development",
+    "iOS Apps Development",
     "UI Design",
     "Responsiveness",
     "State Management",
     "APIs Integration",
     "Backend as a Service",
     "Localization",
-    "Deployment(Play/App Store)",
+    "Testing",
+    "Deployment",
     "CI/CD",
   ],
-  "Generative AI": [
+  GenerativeAI: [
     "Python",
     "LLMs",
-    "Prompt Engineering",
+    "PromptEngineering",
     "LangChain",
     "LangSmith",
     "LangServe",
     "LlamaIndex",
-    "RAG Systems",
-    "Vector Databases",
-    "AI Agents",
+    "RAGSystems",
+    "VectorDatabases",
+    "AIAgents",
     "Automations",
     "MCP Servers",
     "Hugging Face",
-    "LLM OPS",
+    "LLMOPS",
   ],
-  Backend: ["Python", "FastAPI Framework", "Rest APIs", "Postman", "Firebase", "MongoDB"],
-  "Cloud & DevOps": [
+  Backend: ["Python", "FastAPI Framework", "Rest APIs", "Postman", "Firebase", "Supabase", "MongoDB"],
+  CloudDevOps: [
     "Docker",
     "Git",
     "Github Actions",
+    "Code Magic",
     "Google Cloud Platform",
     "Amazon Web Services",
     "Railway",
