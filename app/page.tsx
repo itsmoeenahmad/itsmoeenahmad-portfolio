@@ -163,13 +163,21 @@ const experiences = [
     logo: "/images/flutter-craft-logo.png",
     roles: [
       {
+        position: "Lead Software Engineer",
+        type: "Part-time",
+        duration: "September 2025 - Present ",
+        description:
+          "I lead a small development and design team, managing client communication and ensuring high-quality, user-focused software delivery. I also contribute hands-on to building mobile apps and AI projects, combining strategic planning with active engineering.",
+        skills: ["AppDev", "LeaderShip", "Client Management", "+15 skills"],
+      },
+      {
         position: "Content Creator",
         type: "Part-time",
         duration: "June 2024 - Present ",
         description:
           "Created and shared informative content about Flutter across social media platforms, collaborated with both local and international clients, engaged in public speaking through seminars, workshops, and webinars.",
         skills: ["Creativity", "Public Speaking", "AppDev", "+15 skills"],
-      },
+      }
     ],
   },
   {
@@ -178,14 +186,6 @@ const experiences = [
     logo: "/images/giant-tech-logo.png",
     roles: [
       {
-        position: "Junior Mobile App Developer",
-        type: "Full-time",
-        duration: "July 2024 - June 2025 ",
-        description:
-          "Developed AI-related mobile applications using Flutter, integrating Firebase for backend services and real-time data management.",
-        skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
-      },
-      {
         position: "Generative AI Engineer",
         type: "Full-time",
         duration: "Jan 2025 - June 2025",
@@ -193,6 +193,14 @@ const experiences = [
           "Worked as a Generative AI Engineer, building and integrating AI systems into mobile apps. Key tasks included creating RAG pipelines, AI agents, FastAPI backends, and automations with n8n, all integrated using Flutter.",
         skills: ["LLMs", "AI Agents", "Vector DBs", "R&D", "+15 skills"],
       },
+      {
+        position: "Junior Mobile App Developer",
+        type: "Full-time",
+        duration: "July 2024 - June 2025 ",
+        description:
+          "Developed AI-related mobile applications using Flutter, integrating Firebase for backend services and real-time data management.",
+        skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
+      }
     ],
   },
   {
