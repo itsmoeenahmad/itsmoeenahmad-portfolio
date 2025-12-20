@@ -67,6 +67,15 @@ const projects = [
     image: "/m3kom-consultant-app.png", // Added placeholder image
   },
   {
+    title: "Bees App",
+    description:
+      "Connects users with nearby retail offers using NFC technology, rewarding in store visits through a smart mobile app.",
+    tags: ["Flutter", "Localization", "CI/CD"],
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.cloudb.beesapp",
+    type: "store",
+    image: "/ava-voice-assistant.png", // Added placeholder image
+  },
+  {
     title: "Flutter AI",
     description:
       "Agentic AI Flutter Development Assistant that helps developers with package suggestions, code issues, and debugging support. It answers Flutter-related questions quickly and accurately in a conversational manner.",
@@ -141,10 +150,10 @@ const projects = [
   },
 ]
 
-const experiences = [
+const companies = [
   {
     company: "Cloud Business Co.",
-    location: "Dammam, Saudi Arabia • Hybrid",
+    location: "Dammam, Saudi Arabia • Remote",
     logo: "/images/cloud-business-co-logo.png",
     roles: [
       {
@@ -152,7 +161,7 @@ const experiences = [
         type: "Full-time",
         duration: "July 2025 - Present",
         description:
-          "Working on real-world mobile apps, developing cross-platform solutions, UI, localization, backend integrations, and overseeing all aspects of app development, including project planning, execution, and mentoring junior devs.",
+          "I am working on real-world mobile apps for users in the Kingdom of Saudi Arabia, building cross-platform solutions for Android and iOS with user-friendly UI, Arabic/English localization, and backend integration through REST APIs and WebSockets.\n\nI manage the full development cycle, mentor junior developers, and handle ci/cd, code reviews, Git workflows, and store deployments. I also manage testing through Firebase App Distribution and TestFlight and work with features like Face ID, biometrics, and device permissions to ensure a secure and smooth experience.",
         skills: ["Flutter", "Team Building", "Localization", "+15 skills"],
       },
     ],
@@ -167,7 +176,7 @@ const experiences = [
         type: "Part-time",
         duration: "September 2025 - Present ",
         description:
-          "I lead a small development and design team, managing client communication and ensuring high-quality, user-focused software delivery. I also contribute hands-on to building mobile apps and AI projects, combining strategic planning with active engineering.",
+          "I oversee a small team of developers and designers, guiding them to deliver high-quality, efficient, and user-friendly software solutions. I manage communication with both local and international clients, ensuring project requirements are clearly understood and successfully implemented.\n\nIn addition to leadership and client management, I actively contribute to development, working on Flutter apps and AI-based projects. My role combines strategic planning, hands-on engineering, and team guidance to build software that meets real-world needs and delivers excellent performance.",
         skills: ["AppDev", "LeaderShip", "Client Management", "+15 skills"],
       },
       {
@@ -175,9 +184,9 @@ const experiences = [
         type: "Part-time",
         duration: "June 2024 - Present ",
         description:
-          "Created and shared informative content about Flutter across social media platforms, collaborated with both local and international clients, engaged in public speaking through seminars, workshops, and webinars.",
+          "I help Flutter developers learn and grow by sharing new ideas, improving their skills, and sharing my own experiences. I create practical and easy to understand content, including posts, videos, and stories, that helps developers make their workflow faster and smoother.\n\nThrough online content and in-person sessions like workshops, seminars and webinars, I provide hands-on learning experiences that make it easier for developers to understand and apply flutter concepts in real projects.",
         skills: ["Creativity", "Public Speaking", "AppDev", "+15 skills"],
-      }
+      },
     ],
   },
   {
@@ -190,7 +199,7 @@ const experiences = [
         type: "Full-time",
         duration: "Jan 2025 - June 2025",
         description:
-          "Worked as a Generative AI Engineer, building and integrating AI systems into mobile apps. Key tasks included creating RAG pipelines, AI agents, FastAPI backends, and automations with n8n, all integrated using Flutter.",
+          "I worked on building advanced AI Solutions by researching and developing RAG pipelines and Agentic AI workflows. This included creating AI Agents, Chatbots, and intelligent assistants using tools like LangChain, LangGraph, LangSmith, LangServe, and LlamaIndex.\n\nI designed and implemented RAG Systems with vector databases for intelligent retrieval and generation, while leveraging Python, FastAPI, and REST APIs to build scalable backend services that support real-time AI features.\n\nAdditionally, I contributed to DevOps pipelines, ensuring efficient deployment, monitoring, and performance tuning of AI Systems.",
         skills: ["LLMs", "AI Agents", "Vector DBs", "R&D", "+15 skills"],
       },
       {
@@ -198,9 +207,9 @@ const experiences = [
         type: "Full-time",
         duration: "July 2024 - June 2025 ",
         description:
-          "Developed AI-related mobile applications using Flutter, integrating Firebase for backend services and real-time data management.",
+          "I was responsible for end-to-end app development, covering UI design, logic implementation, state management, backend integration, and deployment. I oversaw projects from planning to execution, ensuring high-quality standards throughout the development cycle.\n\nMy work included developing AI-powered mobile solutions with seamless user interfaces, efficient state management using Provider or Getx or Bloc and integrating backend services and APIs for real-time data flow.",
         skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
-      }
+      },
     ],
   },
   {
@@ -213,7 +222,7 @@ const experiences = [
         type: "Full-time",
         duration: "Dec 2023 - May 2024",
         description:
-          "Worked with App Store deployment and updation processes, Tap payment gateway, Google Maps APIs, and integrated REST APIs to enhance app functionality and user experience.",
+          "I worked on developing and enhancing mobile applications with a strong focus on efficient APIs integration to ensure smooth communication between frontend and backend systems.\n\nMy responsibilities included UI Designing, implementing Google Maps Integration for real-time tracking and optimized route management, integrating APIs to support operational features, payment-gateway integration and applying state management techniques to improve performance, reliability, and maintainability. ",
         skills: ["Flutter", "APIs", "Responsiveness", "Payment Gateway", "AppStore", "+10 skills"],
       },
     ],
@@ -515,7 +524,7 @@ export default function Page() {
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">Experience</h2>
           <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 lg:space-y-12">
-            {experiences.map((exp, index) => (
+            {companies.map((exp, index) => (
               <div
                 key={index}
                 className="bg-slate-800/40 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 border border-white/20"
@@ -543,7 +552,10 @@ export default function Page() {
                     <h4 className="text-base sm:text-lg font-medium text-white mb-1">{role.position}</h4>
                     <p className="text-gray-300 text-xs sm:text-sm mb-1">{role.type}</p>
                     <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">{role.duration}</p>
-                    <p className="text-gray-100 text-sm sm:text-base mb-3 sm:mb-4">{role.description}</p>
+                    <p className="text-gray-100 text-sm sm:text-base mb-3 sm:mb-4 whitespace-pre-line">
+                      {role.description}
+                    </p>
+
                     <div className="flex flex-wrap gap-2">
                       {role.skills.map((skill, skillIndex) => (
                         <span
