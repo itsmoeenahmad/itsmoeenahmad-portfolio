@@ -29,6 +29,16 @@ import ProjectCard from "./components/project-card" // Import ProjectCard
 
 const projects = [
   {
+    title: "Bees App",
+    description:
+      "Connects users with nearby retail offers using NFC technology, rewarding in store visits through a smart mobile app.",
+    tags: ["Flutter", "Localization", "CI/CD"],
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.cloudb.beesapp",
+    appStoreLink: "https://apps.apple.com/sa/app/beesapp/id6754710186",
+    type: "store",
+    image: "/ava-voice-assistant.png", // Added placeholder image
+  },
+  {
     title: "Apaale User App",
     description:
       "An application that connects users who want to transport goods or documents with available drivers, enabling seamless city-to-city or point-to-point delivery.",
@@ -65,15 +75,6 @@ const projects = [
     appStoreLink: "https://apps.apple.com/pk/app/m3kom/id6460889820",
     type: "store",
     image: "/m3kom-consultant-app.png", // Added placeholder image
-  },
-  {
-    title: "Bees App",
-    description:
-      "Connects users with nearby retail offers using NFC technology, rewarding in store visits through a smart mobile app.",
-    tags: ["Flutter", "Localization", "CI/CD"],
-    playStoreLink: "https://play.google.com/store/apps/details?id=com.cloudb.beesapp",
-    type: "store",
-    image: "/ava-voice-assistant.png", // Added placeholder image
   },
   {
     title: "Flutter AI",
@@ -153,15 +154,15 @@ const projects = [
 const companies = [
   {
     company: "Cloud Business Co.",
-    location: "Dammam, Saudi Arabia • Remote",
+    location: "Dammam, Eastern, Saudi Arabia • Remote",
     logo: "/images/cloud-business-co-logo.png",
     roles: [
       {
         position: "Senior Mobile App Developer",
         type: "Full-time",
-        duration: "July 2025 - Present",
+        duration: "July 2025 - January 2026",
         description:
-          "I am working on real-world mobile apps for users in the Kingdom of Saudi Arabia, building cross-platform solutions for Android and iOS with user-friendly UI, Arabic/English localization, and backend integration through REST APIs and WebSockets.\n\nI manage the full development cycle, mentor junior developers, and handle ci/cd, code reviews, Git workflows, and store deployments. I also manage testing through Firebase App Distribution and TestFlight and work with features like Face ID, biometrics, and device permissions to ensure a secure and smooth experience.",
+          "I’ve built real-world mobile apps for users in Saudi Arabia, delivering cross-platform Flutter solutions for Android and iOS with user-friendly UI, Arabic/English localization, and backend integration via REST APIs and WebSockets. I handled the full development lifecycle, mentored junior developers, managed CI/CD pipelines, code reviews, and Play/App Store deployments. I also oversaw testing with Firebase App Distribution and TestFlight, and implemented features like Face ID, biometrics, and device permissions for a secure, smooth user experience.",
         skills: ["Flutter", "Team Building", "Localization", "+15 skills"],
       },
     ],
@@ -174,18 +175,18 @@ const companies = [
       {
         position: "Lead Software Engineer",
         type: "Part-time",
-        duration: "September 2025 - Present ",
+        duration: "September 2025 - January 2026 ",
         description:
-          "I oversee a small team of developers and designers, guiding them to deliver high-quality, efficient, and user-friendly software solutions. I manage communication with both local and international clients, ensuring project requirements are clearly understood and successfully implemented.\n\nIn addition to leadership and client management, I actively contribute to development, working on Flutter apps and AI-based projects. My role combines strategic planning, hands-on engineering, and team guidance to build software that meets real-world needs and delivers excellent performance.",
+          "I led a small team of developers and designers, guiding them to deliver high-quality, user-friendly software while managing communication with local and international clients. Alongside leadership, I contributed hands-on to Flutter apps and AI projects, combining strategic planning with engineering to build efficient, real-world solutions.",
         skills: ["AppDev", "LeaderShip", "Client Management", "+15 skills"],
       },
       {
         position: "Content Creator",
         type: "Part-time",
-        duration: "June 2024 - Present ",
+        duration: "June 2024 - October 2025 ",
         description:
-          "I help Flutter developers learn and grow by sharing new ideas, improving their skills, and sharing my own experiences. I create practical and easy to understand content, including posts, videos, and stories, that helps developers make their workflow faster and smoother.\n\nThrough online content and in-person sessions like workshops, seminars and webinars, I provide hands-on learning experiences that make it easier for developers to understand and apply flutter concepts in real projects.",
-        skills: ["Creativity", "Public Speaking", "AppDev", "+15 skills"],
+          "I help Flutter developers grow by sharing practical tips, tutorials, and experiences through posts, videos, and stories, making workflows faster and smoother. I also run hands-on workshops, seminars, and webinars, helping developers apply Flutter concepts effectively in real projects.",
+        skills: ["Content Creation", "Community Building", "Public Speaking", "+10 skills"],
       },
     ],
   },
@@ -205,7 +206,7 @@ const companies = [
       {
         position: "Junior Mobile App Developer",
         type: "Full-time",
-        duration: "July 2024 - June 2025 ",
+        duration: "July 2024 - June 2025",
         description:
           "I was responsible for end-to-end app development, covering UI design, logic implementation, state management, backend integration, and deployment. I oversaw projects from planning to execution, ensuring high-quality standards throughout the development cycle.\n\nMy work included developing AI-powered mobile solutions with seamless user interfaces, efficient state management using Provider or Getx or Bloc and integrating backend services and APIs for real-time data flow.",
         skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
@@ -234,8 +235,8 @@ const techStack = {
     "Dart Programming",
     "Android Apps Development",
     "iOS Apps Development",
-    "UI Design",
-    "Responsiveness",
+    "Kotlin-Native Development",
+    "Responsive UI-Design",
     "State Management",
     "APIs Integration",
     "Backend as a Service",
@@ -453,7 +454,7 @@ export default function Page() {
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight">
               Moeen Ahmad
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300">Full Stack Engineer (Flutter + AI)</p>
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300">Senior Mobile App Engineer</p>
           </div>
 
           <div className="flex items-center justify-center space-x-6">
@@ -482,35 +483,34 @@ export default function Page() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-16 text-center">About Me</h2>
 
-          <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed space-y-8">
+          <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed space-y-6">
             <p>
-              I am a <strong className="text-white font-semibold">Full Stack Engineer</strong> who builds{" "}
-              <strong className="text-white font-semibold">Mobile Apps</strong>,{" "}
-              <strong className="text-white font-semibold">Rest APIs</strong>, and{" "}
-              <strong className="text-white font-semibold">Generative AI Solutions</strong>. I started by making apps
-              using <strong className="text-white font-semibold">Flutter</strong> for areas like logistics, healthcare,
-              and online services. My focus has always been on creating things that are useful and easy to use.
+              I'm a <strong className="text-white font-semibold">Senior Mobile App Engineer</strong> who loves building
+              apps that actually work and are easy to maintain 🤤
             </p>
 
             <p>
-              Now I work on projects that include smart features powered by{" "}
-              <strong className="text-white font-semibold">AI</strong>. This includes tools like{" "}
-              <strong className="text-white font-semibold">chatbots</strong>,{" "}
-              <strong className="text-white font-semibold">AI Agents</strong>, and Systems that use{" "}
-              <strong className="text-white font-semibold">large language models</strong>. I also build backends that
-              run on cloud platforms such as <strong className="text-white font-semibold">AWS</strong>,{" "}
-              <strong className="text-white font-semibold">GCP</strong> and{" "}
-              <strong className="text-white font-semibold">Render/Railway</strong> using modern tools to keep things
-              fast and reliable.
+              I specialize in <strong className="text-white font-semibold">Flutter & Dart</strong>, writing clean,
+              scalable code with Clean Architecture, MVVM, and feature-based structures. I focus on UI design,
+              responsiveness, localization, APIs integration, state management, performance, and stability 🤓
             </p>
 
             <p>
-              Beyond building, I'm also an active <strong className="text-white font-semibold">tech speaker</strong> and
-              contributor in the tech communities.
+              On the backend, I mainly use Firebase (Auth,
+              Firestore, Storage, Notifications) and sometimes Supabase based on project need. I handle the full app lifecycle:
+              development, testing, deployment, CI/CD, versioning, and long-term maintenance 🙃
             </p>
+
             <p>
-              <strong className="text-white font-semibold">Still Learning.</strong>{" "}
-              <strong className="text-white font-semibold">Still Building.</strong>
+              I also work with <strong className="text-white font-semibold">Generative AI</strong> in Python, building
+              chatbots, RAG systems, and automation tools, plus DevOps and cloud setups using Docker, GitHub Actions,
+              AWS, GCP, Railway, and Koyeb 😎
+            </p>
+
+            <p>Outside work, I speak at tech events and share knowledge with the community.</p>
+
+            <p className="pt-4">
+              <strong className="text-white font-semibold">Still learning. Still building.</strong>
             </p>
           </div>
         </div>
