@@ -160,9 +160,9 @@ const companies = [
       {
         position: "Senior Mobile App Developer",
         type: "Full-time",
-        duration: "July 2025 - January 2026",
+        duration: "July 2025 - Present",
         description:
-          "I’ve built real-world mobile apps for users in Saudi Arabia, delivering cross-platform Flutter solutions for Android and iOS with user-friendly UI, Arabic/English localization, and backend integration via REST APIs and WebSockets. I handled the full development lifecycle, mentored junior developers, managed CI/CD pipelines, code reviews, and Play/App Store deployments. I also oversaw testing with Firebase App Distribution and TestFlight, and implemented features like Face ID, biometrics, and device permissions for a secure, smooth user experience.",
+          "I work on real-world mobile applications for users in Saudi Arabia, building cross-platform Flutter apps for Android and iOS with user-friendly UI and Arabic/English localization. I integrate backends using REST APIs and WebSockets and manage the full development lifecycle. I mentor junior developers and handle CI/CD pipelines, code reviews, and stores deployments. I manage testing with Firebase App Distribution and TestFlight, and implement Face ID, biometrics, and device permissions for secure, smooth user experiences.",
         skills: ["Flutter", "Team Building", "Localization", "+15 skills"],
       },
     ],
