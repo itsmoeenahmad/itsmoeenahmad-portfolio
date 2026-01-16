@@ -43,8 +43,8 @@ const projects = [
     description:
       "An application that connects users who want to transport goods or documents with available drivers, enabling seamless city-to-city or point-to-point delivery.",
     tags: ["Mobile App Development", "API Integration", "Google Maps Integration"],
-    playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.user&pli=1",
-    appStoreLink: "https://apps.apple.com/us/app/apaale/id6502597789",
+    playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.user",
+    appStoreLink: "https://apps.apple.com/pk/app/apaale/id6502597789",
     type: "store",
     image: "/apaale-user-app.png", // Added placeholder image
   },
@@ -53,8 +53,8 @@ const projects = [
     description:
       "An application for drivers to receive delivery requests from users looking to transport goods or documents across different locations with ease.",
     tags: ["Mobile App Development", "API Integration", "Google Maps Integration"],
-    playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.driver&pli=1",
-    appStoreLink: "https://apps.apple.com/us/app/logistic-supplier/id6502517359",
+    playStoreLink: "https://play.google.com/store/apps/details?id=app.logistics.driver",
+    appStoreLink: "https://apps.apple.com/pk/app/apaale-driver/id6502517359",
     type: "store",
     image: "/apaale-driver-app-screenshot.png", // Added placeholder image
   },
@@ -63,7 +63,7 @@ const projects = [
     description:
       "An application that connects users with consultants (experts like teachers, doctors, etc.) for guidance and support in various fields.",
     tags: ["Cross Platform Development", "UI Design", "Error Solving"],
-    appStoreLink: "https://apps.apple.com/pk/app/m3kom-user-app/id6460860855",
+    appStoreLink: "https://apps.apple.com/us/app/m3kom-user-app/id6460860855",
     type: "store",
     image: "/m3kom-user-app.png", // Added placeholder image
   },
@@ -72,7 +72,7 @@ const projects = [
     description:
       "An application for consultants—experts such as teachers, doctors, and more—to connect with users seeking guidance and professional advice.",
     tags: ["Cross Platform Development", "API Integration", "Error Solving"],
-    appStoreLink: "https://apps.apple.com/pk/app/m3kom/id6460889820",
+    appStoreLink: "https://apps.apple.com/us/app/m3kom/id6460889820",
     type: "store",
     image: "/m3kom-consultant-app.png", // Added placeholder image
   },
