@@ -231,7 +231,7 @@ const companies = [
 ]
 
 const techStack = {
-  Mobile App Development: [
+  "Mobile App Development": [
     "Dart Programming",
     "Android Apps Development",
     "iOS Apps Development",
@@ -245,7 +245,7 @@ const techStack = {
     "Deployment",
     "CI/CD",
   ],
-  Generative AI: [
+  "Generative AI": [
     "Python",
     "LLMs",
     "PromptEngineering",
@@ -262,7 +262,7 @@ const techStack = {
     "LLMOPS",
   ],
   Backend: ["Python", "FastAPI Framework", "Rest APIs", "Postman", "Firebase", "Supabase", "MongoDB"],
-  Cloud DevOps: [
+  "Cloud DevOps": [
     "Docker",
     "Git",
     "Github Actions",
@@ -497,18 +497,21 @@ export default function Page() {
             </p>
 
             <p>
-              On the backend, I mainly use Firebase (Auth,
-              Firestore, Storage, Notifications) and sometimes Supabase based on project need. I handle the full app lifecycle:
-              development, testing, deployment, CI/CD, versioning, and long-term maintenance 🙃
+              On the backend, I mainly use Firebase (Auth, Firestore, Storage, Notifications) and sometimes Supabase
+              based on project need. I handle the full app lifecycle: development, testing, deployment, CI/CD,
+              versioning, and long-term maintenance 🙃
             </p>
 
             <p>
               I also work with <strong className="text-white font-semibold">Generative AI</strong> in Python, building
-              Chatbots, RAG Systems, RestAPIs and automation tools, plus DevOps and cloud setups using Docker, GitHub Actions,
-              AWS, GCP, Railway, and Koyeb 😎
+              Chatbots, RAG Systems, RestAPIs and automation tools, plus DevOps and cloud setups using Docker, GitHub
+              Actions, AWS, GCP, Railway, and Koyeb 😎
             </p>
 
-            <p>Outside work, I <strong className="text-white font-semibold">speak</strong> at tech events and share knowledge with the community.</p>
+            <p>
+              Outside work, I <strong className="text-white font-semibold">speak</strong> at tech events and share
+              knowledge with the community.
+            </p>
 
             <p className="pt-4">
               <strong className="text-white font-semibold">Still learning. Still building.</strong>
