@@ -162,7 +162,7 @@ const companies = [
         type: "Full-time",
         duration: "July 2025 - Present",
         description:
-          "I work on real-world mobile applications for users in Saudi Arabia, building cross-platform Flutter apps for Android and iOS with user-friendly UI and Arabic/English localization. I integrate backends using REST APIs and WebSockets and manage the full development lifecycle. I mentor junior developers and handle CI/CD pipelines, code reviews, and stores deployments. I manage testing with Firebase App Distribution and TestFlight, and implement Face ID, biometrics, and device permissions for secure, smooth user experiences.",
+          "I develop real-world cross-platform Flutter apps for Android and iOS, serving users in Saudi Arabia with Arabic/English localization and user-friendly UI. I integrate REST APIs and WebSockets, manage the full app lifecycle, CI/CD, testing, and store deployments. I also mentor juniors and implement secure features like Face ID, biometrics, and device permissions.",
         skills: ["Flutter", "Team Building", "Localization", "+15 skills"],
       },
     ],
@@ -200,15 +200,15 @@ const companies = [
         type: "Full-time",
         duration: "Jan 2025 - June 2025",
         description:
-          "I worked on building advanced AI Solutions by researching and developing RAG pipelines and Agentic AI workflows. This included creating AI Agents, Chatbots, and intelligent assistants using tools like LangChain, LangGraph, LangSmith, LangServe, and LlamaIndex.\n\nI designed and implemented RAG Systems with vector databases for intelligent retrieval and generation, while leveraging Python, FastAPI, and REST APIs to build scalable backend services that support real-time AI features.\n\nAdditionally, I contributed to DevOps pipelines, ensuring efficient deployment, monitoring, and performance tuning of AI Systems.",
+          "I developed advanced AI solutions including RAG pipelines and agentic AI workflows. I built AI agents, chatbots, and assistants using LangChain, LangGraph, and LlamaIndex, with scalable backends in Python and FastAPI. I also contributed to DevOps pipelines for efficient deployment and performance of AI systems.",
         skills: ["LLMs", "AI Agents", "Vector DBs", "R&D", "+15 skills"],
       },
       {
         position: "Junior Mobile App Developer",
         type: "Full-time",
-        duration: "July 2024 - June 2025",
+        duration: "June 2024 - June 2025",
         description:
-          "I was responsible for end-to-end app development, covering UI design, logic implementation, state management, backend integration, and deployment. I oversaw projects from planning to execution, ensuring high-quality standards throughout the development cycle.\n\nMy work included developing AI-powered mobile solutions with seamless user interfaces, efficient state management using Provider or Getx or Bloc and integrating backend services and APIs for real-time data flow.",
+          "I handled end-to-end app development, including UI design, logic, state management, backend integration, and deployment. I led projects from planning to execution, delivering high-quality, AI-powered mobile apps with seamless user experience and real-time data flow.",
         skills: ["Flutter", "UI Design", "APIs Integration", "Firebase", "+20 skills"],
       },
     ],
@@ -223,7 +223,7 @@ const companies = [
         type: "Full-time",
         duration: "Dec 2023 - May 2024",
         description:
-          "I worked on developing and enhancing mobile applications with a strong focus on efficient APIs integration to ensure smooth communication between frontend and backend systems.\n\nMy responsibilities included UI Designing, implementing Google Maps Integration for real-time tracking and optimized route management, integrating APIs to support operational features, payment-gateway integration and applying state management techniques to improve performance, reliability, and maintainability. ",
+          "I developed and enhanced mobile apps with a strong focus on efficient API integration between frontend and backend. My work included UI design, Google Maps integration for real-time tracking, payment gateway integration, and state management to improve performance and reliability.",
         skills: ["Flutter", "APIs", "Responsiveness", "Payment Gateway", "AppStore", "+10 skills"],
       },
     ],
@@ -231,7 +231,7 @@ const companies = [
 ]
 
 const techStack = {
-  Flutter: [
+  Mobile App Development: [
     "Dart Programming",
     "Android Apps Development",
     "iOS Apps Development",
@@ -245,7 +245,7 @@ const techStack = {
     "Deployment",
     "CI/CD",
   ],
-  GenerativeAI: [
+  Generative AI: [
     "Python",
     "LLMs",
     "PromptEngineering",
@@ -262,11 +262,12 @@ const techStack = {
     "LLMOPS",
   ],
   Backend: ["Python", "FastAPI Framework", "Rest APIs", "Postman", "Firebase", "Supabase", "MongoDB"],
-  CloudDevOps: [
+  Cloud DevOps: [
     "Docker",
     "Git",
     "Github Actions",
     "Code Magic",
+    "App Circle",
     "Google Cloud Platform",
     "Amazon Web Services",
     "Railway",
@@ -503,11 +504,11 @@ export default function Page() {
 
             <p>
               I also work with <strong className="text-white font-semibold">Generative AI</strong> in Python, building
-              chatbots, RAG systems, and automation tools, plus DevOps and cloud setups using Docker, GitHub Actions,
+              Chatbots, RAG Systems, RestAPIs and automation tools, plus DevOps and cloud setups using Docker, GitHub Actions,
               AWS, GCP, Railway, and Koyeb 😎
             </p>
 
-            <p>Outside work, I speak at tech events and share knowledge with the community.</p>
+            <p>Outside work, I <strong className="text-white font-semibold">speak</strong> at tech events and share knowledge with the community.</p>
 
             <p className="pt-4">
               <strong className="text-white font-semibold">Still learning. Still building.</strong>
